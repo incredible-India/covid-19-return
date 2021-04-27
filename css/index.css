@@ -35,3 +35,38 @@ flex-direction: column;
     font-family: newf;
 
 }
+
+.navs{
+    position: sticky;
+    top: 10px;
+    left: 10px;
+    margin: 10px 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.logoText{
+
+    width: 100%;
+    height: 450px;
+    /* background-image: linear-gradient(to right,#000,#006); */
+    background-color: orangered;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cText{
+    font-family: newf;
+    font-size: 65px;
+    color: white;
+
+}
+
+.Cret{
+    font-family: newf;
+    font-size: 55px;
+    color: white;
+}
