@@ -11,7 +11,7 @@
 
     <!-- font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/index.css">
 
 
@@ -100,11 +100,15 @@
 
 <div class="container graphs">
   <canvas id="myChart" width="400px"></canvas>
+
   <canvas id="myChart2" width="400px"></canvas>
 
 </div>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- font awesome  -->
+
+
 
 <!-- The social media icon bar -->
 <div class="icon-bar">
@@ -113,6 +117,52 @@
   <a href="#" class="google"><i class="fa fa-google"></i></a>
   <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
   <!-- <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> -->
+</div>
+
+
+
+<!-- for the table  -->
+
+<div class="container tables">
+
+  <marquee behavior="scroll" direction="left"  scrollamount="15" style="color: red; margin: 10px;">All the data has been taken from WHO . For more details go to the official site of WHO</marquee>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+ 
+        <th scope="col" colspan="2">INDIA</th>
+    
+        
+      </tr>
+    </thead>
+    <tbody>
+
+   
+    </tbody>
+
+  </table>
+  
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col" colspan="2">World</th>
+     
+       
+      </tr>
+    </thead>
+    <tbody>
+  
+ 
+    </tbody>
+  </table>
+</div>
+
+
+
+<!-- //myth vs fact  -->
+
+<div class="container-fluid">
+  <h1 class="myth">Myth Vs <span class="f">F</span>act</h1>
 </div>
 
 </body>
@@ -160,6 +210,50 @@ if(navigator.onLine)
         dataOfIndias[4] = dataOfIndia.Countries[i].NewRecovered;
         dataOfIndias[5] = dataOfIndia.Countries[i].TotalRecovered;
         ShowGraph(dataOfIndias)
+
+        document.getElementsByTagName('tbody')[0].innerHTML =`  
+        <tr>
+        <th scope="row" style = "background : lightblue;">New Confirmed</th>
+        <td>${dataOfIndia.Countries[i].NewConfirmed}</td>
+ 
+      </tr>
+
+      <tr>
+        <th scope="row">Total Confirmed</th>
+        <td>${ dataOfIndia.Countries[i].TotalConfirmed}</td>
+ 
+      </tr>
+
+      <tr>
+        <th scope="row" style = "background : red;">New Deaths</th>
+        <td>${dataOfIndia.Countries[i].NewDeaths}</td>
+ 
+      </tr>
+
+      <tr>
+        <th scope="row">Total Deaths</th>
+        <td>${dataOfIndia.Countries[i].TotalDeaths}</td>
+ 
+      </tr>
+      <tr>
+        <th scope="row" style = "background : green;">New Recovered</th>
+        <td>${dataOfIndia.Countries[i].NewRecovered}</td>
+ 
+      </tr>
+
+      <tr>
+        <th scope="row">Total Recovered</th>
+        <td>${dataOfIndia.Countries[i].TotalRecovered}</td>
+ 
+      </tr>
+      
+      <tr>
+        <th scope="row" style = "background : gray;">Last Update</th>
+        <td>${dataOfIndia.Countries[i].Date}</td>
+ 
+      </tr>
+      
+      `
 
       }
     
@@ -285,6 +379,52 @@ var dataOfWorld = [];
     }
 
     ShowGraphs(dataOfWorld)
+
+    document.getElementsByTagName('tbody')[1].innerHTML =`  
+        <tr>
+        <th scope="row">New Confirmed</th>
+        <td>${dataOfIndia.Global.NewConfirmed}</td>
+ 
+      </tr>
+
+      <tr>
+        <th scope="row" style = "background : lightblue;">Total Confirmed</th>
+        <td>${ dataOfIndia.Global.TotalConfirmed}</td>
+ 
+      </tr>
+
+      <tr>
+        <th scope="row">New Deaths</th>
+        <td>${dataOfIndia.Global.NewDeaths}</td>
+ 
+      </tr>
+
+      <tr>
+        <th scope="row" style = "background : red;">Total Deaths</th>
+        <td>${dataOfIndia.Global.TotalDeaths}</td>
+ 
+      </tr>
+      <tr>
+        <th scope="row">New Recovered</th>
+        <td>${dataOfIndia.Global.NewRecovered}</td>
+ 
+      </tr>
+
+      <tr>
+        <th scope="row" style = "background : green;">Total Recovered</th>
+        <td>${dataOfIndia.Global.TotalRecovered}</td>
+ 
+      </tr>
+
+      
+      <tr>
+        <th scope="row" style = "background : gray;">Last Update</th>
+        <td>${dataOfIndia.Global.Date}</td>
+ 
+      </tr>
+      
+      
+      `
 
   })
 

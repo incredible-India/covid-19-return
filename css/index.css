@@ -173,4 +173,35 @@ flex-direction: column;
 }
 .c{
   color: orangered;
+
+}
+
+  .thead-dark{
+    background-color: orangered;
+    color: white;
+  }
+
+  .tables {
+    /* width: 600px; */
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  tr:hover{
+    background-color: gray;
+  }
+
+.myth{
+  font-family: newf;
+  font-size: 45px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.f{
+  color: #dd4b39;
 }
