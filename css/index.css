@@ -131,3 +131,46 @@ flex-direction: column;
     font-family: newf;
     font-size: 36px;
 }
+
+
+
+
+.graphs{
+
+  margin-top: 25px;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .graphs{
+
+    overflow-x: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}
+
+
+@media only screen and (mix-width: 400px) {
+
+  #myChart{
+    width: 300px;
+  }
+
+  #myChart2{
+    width: 301px;
+  }
+}
+.c{
+  color: orangered;
+}

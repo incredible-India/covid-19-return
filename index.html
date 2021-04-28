@@ -14,6 +14,11 @@
     
     <link rel="stylesheet" href="./css/index.css">
 
+
+<!-- for the chart  -->
+
+
+
 </head>
 <body>
     
@@ -79,8 +84,15 @@
 
 <div class="container graph">
 
-    <h3 class="India">India</h3>
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <h3 class="India">Summary Of  <span class="c">C</span>ases</h3>
+   
+  
+</div>
+
+
+<div class="container graphs">
+  <canvas id="myChart" width="400px"></canvas>
+  <canvas id="myChart2" width="400px"></canvas>
 
 </div>
 
@@ -96,9 +108,13 @@
 </div>
 
 </body>
+
+
+
 <script src="./js/index.js"></script>
 
 <!-- chart.js  -->
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- bootstrap  -->
 
@@ -106,70 +122,117 @@
 
 
 <!-- for the chart  -->
+
+
+<!-- <canvas id="myChart" width="400" height="400"></canvas> -->
 <script>
-
-    var DataCollection = [];
-
-    
-    fetch('https://api.covid19api.com/summary')
-    .then(result => result.json())
-    .then(finalData =>{
-
-        // document.getElementById('globaldata').innerHTML=`Total Cases in the World : ${finalData.Global.TotalConfirmed}`
-
-for(i in finalData.Countries)
-{
-if(finalData.Countries[i].Country=='India')
-{
-    DataCollection[0] = finalData.Countries[i].TotalConfirmed;
-    DataCollection[1] = finalData.Countries[i].NewConfirmed;
-    DataCollection[2] = finalData.Countries[i].TotalDeaths;
-    DataCollection[3] = finalData.Countries[i].TotalRecovered;
-}
-}
-    });
-
-    console.log(DataCollection);
-
-    var ctx = document.getElementById('myChart').getContext('2d'); //graph canvas
+var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ['Confirmed','Active', 'Deth', 'Recover'],
+        labels: ['Confirmed', 'Active', 'Deth', 'Recover'],
         datasets: [{
             label: '# of Votes',
-            data: [100,200,300,25],
+            data: [12, 19, 3, 5],
             backgroundColor: [
-                'rgba(54, 162, 235, 0.2)',
-
-                'rgba(255, 306, 96, 0.2)',
-
-                'rgba(255, 99, 132, 0.2)',
-                
-                'rgba(10, 206, 10, 0.2)'
-              
+               
+                'rgba(54, 162, 235)',
+                'rgba(255, 206, 86)',
+                'rgba(255, 99, 132 )',
+                'rgba(75, 192, 192)',
+               
             ],
             borderColor: [
-
-            'rgba(54, 162, 235, 1)',
-
-            'rgba(255, 306, 96, 0.2)',
-
-                'rgba(255, 99, 132, 1)',
-                
-                'rgba(10, 206, 10, 1)'
+            'rgba(54, 162, 235)',
+                'rgba(255, 206, 86)',
+                'rgba(255, 99, 132 )',
+                'rgba(75, 192, 192)',
             ],
             borderWidth: 1
         }]
     },
     options: {
-        scales: {
+      responsive : false
+
+      
+        ,scales: {
             y: {
                 beginAtZero: true
             }
         }
+        , plugins: {
+            title: {
+                display: true,
+                text: 'India'
+                ,fontSize : '40px'
+            }
+        },
+
+        animation :{
+          duration : 1000,
+          easing : "linear"
+          ,loop : false
+        }
     }
 });
-
 </script>
+
+<!-- for the seconfdc hart  -->
+
+<script>
+  var ctx = document.getElementById('myChart2').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+          labels: ['Confirmed', 'Active', 'Deth', 'Recover'],
+          datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5],
+              backgroundColor: [
+                 
+                  'rgba(54, 162, 235)',
+                  'rgba(255, 206, 86)',
+                  'rgba(255, 99, 132 )',
+                  'rgba(75, 192, 192)',
+                 
+              ],
+              borderColor: [
+              'rgba(54, 162, 235)',
+                  'rgba(255, 206, 86)',
+                  'rgba(255, 99, 132 )',
+                  'rgba(75, 192, 192)',
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+        responsive : false
+  
+        
+          ,scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
+          , plugins: {
+              title: {
+                  display: true,
+                  text: 'World'
+                  ,fontSize : 28
+              }
+          },
+  
+          animation :{
+            duration : 1000,
+            easing : "linear"
+            ,loop : false
+          }
+      }
+  });
+  </script>
+
+
+<!-- for the third chart  -->
+
+
 </html>
