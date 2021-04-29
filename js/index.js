@@ -318,3 +318,9 @@ var myChart = new Chart(ctx, {
 });
 
 }
+
+
+
+//for the top 5 countries
+
+

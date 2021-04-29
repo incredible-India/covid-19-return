@@ -125,7 +125,7 @@
 
 <div class="container tables">
 
-  <marquee behavior="scroll" direction="left"  scrollamount="15" style="color: red; margin: 10px;">All the data has been taken from WHO . For more details go to the official site of WHO</marquee>
+  <marquee behavior="scroll" direction="left"  scrollamount="11" style="color: red; margin: 10px;">All the data has been taken from WHO . For more details go to the official site of WHO</marquee>
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -162,7 +162,54 @@
 <div class="getDetails container">
   <a class="btnlink" href="#">Get More Details</a>
 </div>
+
 </body>
+
+
+
+<!-- //////////////////////////////////////// -->
+
+
+<!-- top 5 country -->
+
+<div class="container tops">
+
+  <h1>Top 5 <span class="c">Countries</span></h1>
+
+  <canvas id="myChart4" ></canvas>
+
+</div>
+
+
+
+
+<!-- ////////////////////////////////////////  -->
+
+
+
+
+<!-- <stop spredding  -->
+
+
+  <div class="container boxes">
+
+      <img src="https://www.gstatic.com/healthricherkp/campaigns/wear-mask-save-lives/UZ9ZuX.svg" alt="" class="img-fluid svs">
+
+      <div class="texts">
+        <h1> <span class="c">Stopping</span> the spreadstarts with you</h1>
+        <h5>Wear a mask.</h5>
+        <h5>Clean your hands.</h5>
+        <h5>Maintain safe distance.</h5>
+        <h5>Get vaccinated.</h5>
+</div>
+  </div>
+
+
+ 
+  
+  
+  </div>
+  
 
 <!-- //myth vs fact  -->
 
@@ -187,6 +234,10 @@
     <h1 class="fact"> <span class="c">Fact</span>: There is NO evidence that companion animals/pets such as
       dogs or cats are spreading disease to humans. </h1>
 </div>
+
+
+
+
 
 
 
@@ -228,7 +279,159 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
+<script>
+  
 
+  let AllActive = [] ;//all the data will be inside this array
+  let top5Active = []; //final top 5 data will be inside
+  let top5Deth = []; //final top 5 data will be inside
+  let top5Recover = []; //final top 5 data will be inside
+
+  let CName = [] ; //this will caintain the name of the cities
+ if(navigator.onLine)
+ {
+      fetch('https://api.covid19api.com/summary')
+      .then(datahub => datahub.json())
+      .then(finaldata => {
+
+
+        for(i in finaldata.Countries)
+        {
+
+        
+          AllActive[i] = finaldata.Countries[i].TotalConfirmed;
+        
+        }
+       
+        AllActive.sort(function(a,b){return (b-a)});
+   
+        for (let index = 0; index <5; index++) {
+            top5Active[index] = AllActive[index]
+          
+        }
+
+        for (let index = 0; index < 5; index++) {
+          
+          for(i in finaldata.Countries)
+          {
+            if(top5Active[index] == finaldata.Countries[i].TotalConfirmed)
+            {
+              CName[index] = finaldata.Countries[i].Country;
+              top5Deth[index] = finaldata.Countries[i].TotalDeaths;
+              top5Recover[index] = finaldata.Countries[i].TotalRecovered;
+
+
+            }
+          }
+          
+        }
+        // console.log(CName);
+        // console.log(top5Active);
+     showGraphData(top5Active,CName,top5Deth,top5Recover)
+   
+      });
+
+
+ }
+
+ function showGraphData(arrayOfData,arrayOfCities,arrayOFDeth,arrayofRecover)
+ {
+
+  
+var ctx = document.getElementById('myChart4').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: arrayOfCities,
+        datasets: [{
+            label: 'Total Confirmed',
+         
+            data: arrayOfData,
+            backgroundColor: [
+                'rgba(255, 99, 132,)',
+                'rgba(54, 162, 235,)',
+                'rgba(255, 206, 86,)',
+                'rgba(255,0,0)',
+                'reba(0,0,255)'
+             
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(255,0,0)',
+                'reba(0,0,255)'
+            
+            ],
+            borderWidth: 1
+        },
+      
+      
+        {
+            label: 'Total Recover',
+         
+            data: arrayofRecover,
+            backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+             
+            ],
+            borderColor: [
+            'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+            
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 'Total Deth',
+         
+            data: arrayOFDeth,
+            backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+             
+            ],
+            borderColor: [
+            'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+            
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: 
+       
+    {
+      responsive :false,
+      animation :{
+        duration : 3000,
+      },
+      
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+ }
+
+</script>
 <!-- for the chart  -->
 
 
