@@ -174,9 +174,9 @@
 
 <div class="container tops">
 
-  <h1>Top 5 <span class="c">Countries</span></h1>
+  <h1 class="top5">Top 5 <span class="c">Countries</span></h1>
 
-  <canvas id="myChart4" ></canvas>
+  <canvas id="myChart4" class="mycharts"  style="width: 100%; height:400px;"></canvas>
 
 </div>
 
@@ -201,6 +201,7 @@
         <h5>Clean your hands.</h5>
         <h5>Maintain safe distance.</h5>
         <h5>Get vaccinated.</h5>
+        <a href="https://dashboard.cowin.gov.in/" class="c" target="_blank" style="font-size: 28px;">Register For Vaccination</a>
 </div>
   </div>
 
@@ -334,13 +335,13 @@
 
  }
 
- function showGraphData(arrayOfData,arrayOfCities,arrayOFDeth,arrayofRecover)
+ function showGraphData(arrayOfData,arrayOfCities)
  {
 
   
 var ctx = document.getElementById('myChart4').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
         labels: arrayOfCities,
         datasets: [{
@@ -348,69 +349,25 @@ var myChart = new Chart(ctx, {
          
             data: arrayOfData,
             backgroundColor: [
-                'rgba(255, 99, 132,)',
-                'rgba(54, 162, 235,)',
-                'rgba(255, 206, 86,)',
-                'rgba(255,0,0)',
-                'reba(0,0,255)'
+                'orange',
+                'red',
+                'green',
+                'yellow',
+                'lightblue'
              
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(255,0,0)',
-                'reba(0,0,255)'
+            'orange',
+                'red',
+                'green',
+                'yellow',
+                'lightblue'
             
             ],
             borderWidth: 1
         },
-      
-      
-        {
-            label: 'Total Recover',
-         
-            data: arrayofRecover,
-            backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-             
-            ],
-            borderColor: [
-            'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-            
-            ],
-            borderWidth: 1
-        },
-        {
-            label: 'Total Deth',
-         
-            data: arrayOFDeth,
-            backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-             
-            ],
-            borderColor: [
-            'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-            
-            ],
-            borderWidth: 1
-        }]
+    
+        ]
     },
     options: 
        
@@ -424,7 +381,15 @@ var myChart = new Chart(ctx, {
             y: {
                 beginAtZero: true
             }
-        }
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'Total Cases'
+                ,fontSize : '40px'
+            }
+            }
+        
     }
 });
 

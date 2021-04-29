@@ -341,55 +341,33 @@ text-decoration: none;
 }
 
 
+.top5{
+  text-align: center;
+  font-weight: 900;
+  font-size: 35px;
+  font-family: newf;
+}
 
 .tops{
-  width: 100%;
+  margin-top: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
 }
 
-
-#myChart4{
-  width: 100%;
-  height: 300px;
-}
-
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
 
 
   .tops{
     overflow-x: auto;
-    
-  height: 800px;
-  width: 800px;
+    /* width: 350px; */
   }
-  #myChart4{
-
-  height: 800px;
-  width: 800px;
-  overflow-x: auto;
-  }
-
-
-}
-
-@media only screen and (max-width: 500px) {
-
-
-  .tops{
- /* overflow-x: auto; */
-    height: 450px;
-    width: 450px;
-  }
-  #myChart4{
-
-  height: 450px;
-  width: 450px;
-  overflow-x: auto;
-  }
+ .mycharts {
+   width: 300px;
+   overflow-x: auto;
+ }
 
 
 }
