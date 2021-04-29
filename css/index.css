@@ -192,7 +192,7 @@ flex-direction: column;
   }
 
   tr:hover{
-    background-color: gray;
+    background-color: rgba(25,45,60,0.2);
   }
 
 .myth{
