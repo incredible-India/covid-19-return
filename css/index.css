@@ -161,7 +161,7 @@ flex-direction: column;
 }
 
 
-@media only screen and (mix-width: 400px) {
+@media only screen and (max-width: 400px) {
 
   #myChart{
     width: 300px;
@@ -170,7 +170,14 @@ flex-direction: column;
   #myChart2{
     width: 301px;
   }
+
+  .pets{
+    width: 300px;
+    height: 300px;
+  }
 }
+
+
 .c{
   color: orangered;
 
@@ -204,4 +211,113 @@ flex-direction: column;
 
 .f{
   color: #dd4b39;
+}
+
+
+.getDetails{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.btnlink {
+  text-decoration: none;
+  color: #dd4b39;
+  font-size: 25px;
+}
+
+td {
+  font-weight: 600;
+  text-align: center;
+}
+
+th{
+  text-align: center;
+}
+
+.pets{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 500px;
+  margin-top: 20px;
+  border-radius:50%;
+}
+
+.mf{
+  /* background-image: url(./../images/intro.jpg); */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myths{
+  color: black;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* background-image: url(./../images/intro.jpg); */
+  margin-top: 25px;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.fact{
+  color: black;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* background-image: url(./../images/intro.jpg); */
+  margin-top: 25px;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+
+
+@media only screen and (max-width: 420px) {
+
+  .pets{
+
+  height: 300px;
+  width: 300px;
+  }
+
+
+}
+
+
+iframe {
+  width: 100%;
+  height: 100vh;
+}
+
+
+.seeit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.kmore{
+  background-color: orangered;
+  color: white;
+}
+
+.ohc
+{
+  font-family: newf;
+}
+
+.fullsc{
+  text-align: center;
+  color: #dd4b39;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif\; */
+  font-size:25px;
+  font-family: Arial, Helvetica, sans-serif;
+text-decoration: none;
+  
 }
