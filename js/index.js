@@ -324,3 +324,116 @@ var myChart = new Chart(ctx, {
 //for the top 5 countries
 
 
+
+let AllActive = [] ;//all the data will be inside this array
+let top5Active = []; //final top 5 data will be inside
+let top5Deth = []; //final top 5 data will be inside
+let top5Recover = []; //final top 5 data will be inside
+
+let CName = [] ; //this will caintain the name of the cities
+if(navigator.onLine)
+{
+    fetch('https://api.covid19api.com/summary')
+    .then(datahub => datahub.json())
+    .then(finaldata => {
+
+
+      for(i in finaldata.Countries)
+      {
+
+      
+        AllActive[i] = finaldata.Countries[i].TotalConfirmed;
+      
+      }
+     
+      AllActive.sort(function(a,b){return (b-a)});
+ 
+      for (let index = 0; index <5; index++) {
+          top5Active[index] = AllActive[index]
+        
+      }
+
+      for (let index = 0; index < 5; index++) {
+        
+        for(i in finaldata.Countries)
+        {
+          if(top5Active[index] == finaldata.Countries[i].TotalConfirmed)
+          {
+            CName[index] = finaldata.Countries[i].Country;
+            top5Deth[index] = finaldata.Countries[i].TotalDeaths;
+            top5Recover[index] = finaldata.Countries[i].TotalRecovered;
+
+
+          }
+        }
+        
+      }
+      // console.log(CName);
+      // console.log(top5Active);
+   showGraphData(top5Active,CName,top5Deth,top5Recover)
+ 
+    });
+
+
+}
+
+function showGraphData(arrayOfData,arrayOfCities)
+{
+
+
+var ctx = document.getElementById('myChart4').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+      labels: arrayOfCities,
+      datasets: [{
+          label: 'Total Confirmed',
+       
+          data: arrayOfData,
+          backgroundColor: [
+              'orange',
+              'red',
+              'green',
+              'yellow',
+              'lightblue'
+           
+          ],
+          borderColor: [
+          'orange',
+              'red',
+              'green',
+              'yellow',
+              'lightblue'
+          
+          ],
+          borderWidth: 1
+      },
+  
+      ]
+  },
+  options: 
+     
+  {
+    responsive :false,
+    animation :{
+      duration : 3000,
+    },
+    
+      scales: {
+          y: {
+              beginAtZero: true
+          }
+      },
+      plugins: {
+          title: {
+              display: true,
+              text: 'Total Cases'
+              ,fontSize : '40px'
+          }
+          }
+      
+  }
+});
+
+
+}
