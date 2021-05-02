@@ -5,6 +5,8 @@
     font-family: newf;
     src: url(./../fonts/MrGrieves-Regular.otf);
 }
+
+
 .icon-bar {
     position: fixed;
     top: 85%;
@@ -144,7 +146,10 @@
 }  
 
 .novel{
-
+  position: sticky;
+  top: 10px;
+  left: 10px;
+  /* background-color: orange; */
     display: flex;
     flex-direction: row;
     margin-left: 0px;

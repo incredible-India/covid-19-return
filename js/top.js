@@ -1,5 +1,5 @@
 
-let chartTypeCase = document.getElementsByTagName('select')[0] ; //for the total and new cases
+let chartTypeCase = document.getElementsByTagName('select')[0]; //for the total and new cases
 
 var top5CasesArray = [];//in this we will put the values of top 5 case
 var top5NewCasesArray = [];//in this we will put the values of top 5 case
@@ -118,21 +118,87 @@ if(navigator.onLine)
 
                     if(top5NewDethArray[i] == finalJsonData.Countries[j].NewDeaths)
                     {
-                        CnameNewDeth[i] = finalJsonData.Countries[j].Country
+                        CnameNewDeth[i] = finalJsonData.Countries[j].Country;
+
+                        document.getElementsByClassName('Table6Body')[0].innerHTML +=`
+                        
+                        <tr>
+                        <th scope="row">${finalJsonData.Countries[j].Country}</th>
+                        <td>${finalJsonData.Countries[j].TotalConfirmed}</td>
+                        <td>${finalJsonData.Countries[j].NewConfirmed}</td>
+                        <td>${finalJsonData.Countries[j].TotalRecovered}</td>
+                        <td>${finalJsonData.Countries[j].NewRecovered}</td>
+                        <td>${finalJsonData.Countries[j].TotalDeaths}</td>
+                        <td>${finalJsonData.Countries[j].NewDeaths}</td>
+                        <td>${finalJsonData.Countries[j].Date}</td>
+                      </tr>
+                        
+                        
+                        
+                        `
                     }
                     if(top5DethArray[i] == finalJsonData.Countries[j].TotalDeaths)
                     {
-                        CnmaeTotalDeth[i] = finalJsonData.Countries[j].Country
+                        CnmaeTotalDeth[i] = finalJsonData.Countries[j].Country;
+
+                        document.getElementsByClassName('Table5Body')[0].innerHTML +=`
+                        
+                        <tr>
+                        <th scope="row">${finalJsonData.Countries[j].Country}</th>
+                        <td>${finalJsonData.Countries[j].TotalConfirmed}</td>
+                        <td>${finalJsonData.Countries[j].NewConfirmed}</td>
+                        <td>${finalJsonData.Countries[j].TotalRecovered}</td>
+                        <td>${finalJsonData.Countries[j].NewRecovered}</td>
+                        <td>${finalJsonData.Countries[j].TotalDeaths}</td>
+                        <td>${finalJsonData.Countries[j].NewDeaths}</td>
+                        <td>${finalJsonData.Countries[j].Date}</td>
+                      </tr>
+                        
+                        
+                        
+                        `
                     }
 
                     if(top5RecoverArray[i] == finalJsonData.Countries[j].TotalRecovered)
                     {
-                        CnmaeTotalRec[i] = finalJsonData.Countries[j].Country
+                        CnmaeTotalRec[i] = finalJsonData.Countries[j].Country;
+                        document.getElementsByClassName('Table3Body')[0].innerHTML +=`
+                        
+                        <tr>
+                        <th scope="row">${finalJsonData.Countries[j].Country}</th>
+                        <td>${finalJsonData.Countries[j].TotalConfirmed}</td>
+                        <td>${finalJsonData.Countries[j].NewConfirmed}</td>
+                        <td>${finalJsonData.Countries[j].TotalRecovered}</td>
+                        <td>${finalJsonData.Countries[j].NewRecovered}</td>
+                        <td>${finalJsonData.Countries[j].TotalDeaths}</td>
+                        <td>${finalJsonData.Countries[j].NewDeaths}</td>
+                        <td>${finalJsonData.Countries[j].Date}</td>
+                      </tr>
+                        
+                        
+                        
+                        `
                     }
 
                     if(top5NewRecoverArray[i] == finalJsonData.Countries[j].NewRecovered)
                     {
-                        CnameNewRec[i] = finalJsonData.Countries[j].Country
+                        CnameNewRec[i] = finalJsonData.Countries[j].Country;
+                        document.getElementsByClassName('Table4Body')[0].innerHTML +=`
+                        
+                        <tr>
+                        <th scope="row">${finalJsonData.Countries[j].Country}</th>
+                        <td>${finalJsonData.Countries[j].TotalConfirmed}</td>
+                        <td>${finalJsonData.Countries[j].NewConfirmed}</td>
+                        <td>${finalJsonData.Countries[j].TotalRecovered}</td>
+                        <td>${finalJsonData.Countries[j].NewRecovered}</td>
+                        <td>${finalJsonData.Countries[j].TotalDeaths}</td>
+                        <td>${finalJsonData.Countries[j].NewDeaths}</td>
+                        <td>${finalJsonData.Countries[j].Date}</td>
+                      </tr>
+                        
+                        
+                        
+                        `
                     }
                 }
 
@@ -142,8 +208,12 @@ if(navigator.onLine)
                }
 
 
-               showTotalGraph("myChart","pie",top5CasesArray,CnmaeTotalCase,"Total Cases")
-               showNewGraph("myChart1","polarArea",top5NewCasesArray,CnameNewCase,"New Cases")
+               showTotalGraph("myChart","pie",top5CasesArray,CnmaeTotalCase,"Total Cases");
+               showNewGraph("myChart1","pie",top5NewCasesArray,CnameNewCase,"New Cases");
+               showTotalGraph("myChart3","bar",top5RecoverArray,CnmaeTotalRec,"Total Recovered");
+               showNewGraph("myChart4","bar",top5NewRecoverArray,CnameNewRec,"New Recovered");
+               showTotalGraph("myChart5","doughnut",top5DethArray,CnmaeTotalDeth,"Total Death");
+               showNewGraph("myChart6","doughnut",top5NewDethArray,CnameNewDeth,"New Death");
 
             //    memory free 
 
@@ -277,6 +347,8 @@ function showNewGraph(DomName,chartType,data,Country,title)
     });
 }
 
+
+//for changing the chart type
 chartTypeCase.onchange = function()
 {
     let theTypeOfChartIs = chartTypeCase.value;
@@ -287,7 +359,22 @@ chartTypeCase.onchange = function()
     <canvas id="myChart" width="350" height="400"></canvas>
     <canvas id="myChart1" width="350" height="400"></canvas>
     `
- 
-    showTotalGraph("myChart",theTypeOfChartIs,top5CasesArray,CnmaeTotalCase,"Total Cases")
-    showNewGraph("myChart1",theTypeOfChartIs,top5NewCasesArray,CnameNewCase,"New Cases")
+    document.getElementsByClassName('chartCase')[1].innerHTML =`
+    <canvas id="myChart3" width="350" height="400"></canvas>
+    <canvas id="myChart4" width="350" height="400"></canvas>
+    `
+    document.getElementsByClassName('chartCase')[2].innerHTML =`
+    <canvas id="myChart5" width="350" height="400"></canvas>
+    <canvas id="myChart6" width="350" height="400"></canvas>
+    `
+    showTotalGraph("myChart",theTypeOfChartIs,top5CasesArray,CnmaeTotalCase,"Total Cases");
+    showNewGraph("myChart1",theTypeOfChartIs,top5NewCasesArray,CnameNewCase,"New Cases");
+    showTotalGraph("myChart3",theTypeOfChartIs,top5RecoverArray,CnmaeTotalRec,"Total Recovered");
+    showNewGraph("myChart4",theTypeOfChartIs,top5NewRecoverArray,CnameNewRec,"New Recovered");
+    showTotalGraph("myChart5",theTypeOfChartIs,top5DethArray,CnmaeTotalDeth,"Total Death");
+    showNewGraph("myChart6",theTypeOfChartIs,top5NewDethArray,CnameNewDeth,"New Death");
 }
+
+
+
+//loader removed

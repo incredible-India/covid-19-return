@@ -117,7 +117,7 @@
           <!-- <img src="./../images/w" alt="" class="img-fluid"> -->
         </div>
 
-        <div class="chartCase container">
+        <div class="chartCase container" >
 
           <canvas id="myChart" width="350" height="400"></canvas>
           <canvas id="myChart1" width="350" height="400"></canvas>
@@ -125,17 +125,20 @@
         </div>
 
 
-        <!-- //for the table of data 
+        <!-- //for the table of data total cases
          -->
          <div class="makTable container">
+           <div class="textTable">
+             <h3>Total <span class="c">Cases</span> </h3>
+           </div>
           <table class="table">
             <thead class="thead-primary">
               <tr>
                 <th scope="col">Country</th>
-                <th scope="col">Total Case</th>
-                <th scope="col">New Case</th>
-                <th scope="col">Total Recover</th>
-                <th scope="col">New Recover</th>
+                <th scope="col">Total Cases</th>
+                <th scope="col">New Cases</th>
+                <th scope="col">Total Recoverd</th>
+                <th scope="col">New Recoverd</th>
                 <th scope="col">Total Death</th>
                 
                 <th scope="col">New Death</th>
@@ -154,16 +157,22 @@
               </tr> -->
               
             </tbody>
+
+        
+
+            
           </table>
-          
+          <div class="textTable">
+            <h3>New <span class="c"> Cases</span></h3>
+          </div>
           <table class="table">
             <thead class="thead-light">
               <tr>
                 <th scope="col">Country</th>
-                <th scope="col">Total Case</th>
-                <th scope="col">New Case</th>
-                <th scope="col">Total Recover</th>
-                <th scope="col">New Recover</th>
+                <th scope="col">Total Cases</th>
+                <th scope="col">New Cases</th>
+                <th scope="col">Total Recoverd</th>
+                <th scope="col">New Recoverd</th>
                 <th scope="col">Total Death</th>
                 
                 <th scope="col">New Death</th>
@@ -186,8 +195,169 @@
          </div>
     
            
-  
+  <div class="waitImg container">
+    <img src="./../images/wait.svg" alt="" class="img-fluid" width="100px" height="100px">
+  </div>
         
+<!-- //for the top Recovers -->
+
+<div class="case container">
+  <h1 class="casest container">Top-5 <span class="c">Recovered</span></h1>
+
+</div>
+
+
+
+
+<div class="chartCase container" >
+
+  <canvas id="myChart3" width="350" height="400"></canvas>
+  <canvas id="myChart4" width="350" height="400"></canvas>
+
+</div>
+
+
+<!-- //for the table of data total cases
+ -->
+ <div class="makTable container">
+   <div class="textTable">
+     <h3>Total <span class="c">Recoverd</span> </h3>
+   </div>
+  <table class="table">
+    <thead class="thead-primary">
+      <tr>
+        <th scope="col">Country</th>
+        <th scope="col">Total Cases</th>
+        <th scope="col">New Cases</th>
+        <th scope="col">Total Recoverd</th>
+        <th scope="col">New Recoverd</th>
+        <th scope="col">Total Death</th>
+        
+        <th scope="col">New Death</th>
+        <th scope="col">Last Update</th>
+      </tr>
+    </thead>
+    <tbody class="Table3Body">
+      <!-- <tr>
+        <th scope="row">Mark</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr> -->
+      
+    </tbody>
+
+
+
+    
+  </table>
+  <div class="textTable">
+    <h3>New <span class="c">Recoverd</span></h3>
+  </div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Country</th>
+        <th scope="col">Total Cases</th>
+        <th scope="col">New Cases</th>
+        <th scope="col">Total Recoverd</th>
+        <th scope="col">New Recoverd</th>
+        <th scope="col">Total Death</th>
+        
+        <th scope="col">New Death</th>
+        <th scope="col">Last Update</th>
+      </tr>
+    </thead>
+    <tbody  class="Table4Body">
+ 
+      
+    </tbody>
+  </table>
+ </div>
+
+
+
+<!-- third for the deathsData -->
+
+
+
+<div class="case container">
+  <h1 class="casest container">Top-5 <span class="c">Death</span></h1>
+
+</div>
+
+
+
+<div class="loaderimg">
+  <!-- <img src="./../images/w" alt="" class="img-fluid"> -->
+</div>
+
+<div class="chartCase container" >
+
+  <canvas id="myChart5" width="350" height="400"></canvas>
+  <canvas id="myChart6" width="350" height="400"></canvas>
+
+</div>
+
+
+<!-- //for the table of data total cases
+ -->
+ <div class="makTable container">
+   <div class="textTable">
+     <h3>Total <span class="c">Death</span> </h3>
+   </div>
+  <table class="table">
+    <thead class="thead-primary">
+      <tr>
+        <th scope="col">Country</th>
+        <th scope="col">Total Cases</th>
+        <th scope="col">New Cases</th>
+        <th scope="col">Total Recoverd</th>
+        <th scope="col">New Recoverd</th>
+        <th scope="col">Total Death</th>
+        
+        <th scope="col">New Death</th>
+        <th scope="col">Last Update</th>
+      </tr>
+    </thead>
+    <tbody class="Table5Body">
+
+      
+    </tbody>
+
+
+
+    
+  </table>
+  <div class="textTable">
+    <h3>New <span class="c">Death</span></h3>
+  </div>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Country</th>
+        <th scope="col">Total Cases</th>
+        <th scope="col">New Cases</th>
+        <th scope="col">Total Recoverd</th>
+        <th scope="col">New Recoverd</th>
+        <th scope="col">Total Death</th>
+        
+        <th scope="col">New Death</th>
+        <th scope="col">Last Update</th>
+      </tr>
+    </thead>
+    <tbody  class="Table6Body">
+
+      
+    </tbody>
+  </table>
+ </div>
+
+
+
       <!-- footer  -->
 
 
@@ -211,7 +381,7 @@
       <h6> <a href="tel:+8604470501" class="ct"> <i class="fas fa-phone ct"></i> Contact Us</a></h6>
       <h6> <a href="https://github.com/incredible-India/covid-19-return" target="_blank" class="ct"><i class="fa fa-github ct"></i> Contribution for this project</a></h6>
 
-     <h6> <a href="./../index.html" class="ct"><i class="fas fa-home"></i> Home</a></h6>
+      <h6> <a href="#" class="ct"><i class="fas fa-arrow-circle-up"></i> Go To Top </a></h6>
     </div>
         <img src="./.././images/design.svg" alt="" class="img-fluid" width="100px">
 </div>
