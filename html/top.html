@@ -26,10 +26,13 @@
       
 <!-- nav bar  -->
 
-<i class="fas fa-bars navs" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+<div class="novel">
+    <i class="fas fa-bars navs" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
    
-</i>
+    </i>
 
+    <h4 class="container stitle">Covid-19 Return</h4>
+</div>
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
@@ -75,23 +78,14 @@
       <hr>
     <h6 class="cases">Aurthor</h6>
         
-        <h6><a href="./html/auth.html" class="ctr">About</a></h6>
+        <h6><a href="./auth.html" class="ctr">About</a></h6>
    
 
  
         <img src="./../images/designMenu.svg" alt="" class="img-fluid avtaer">
 
       </div>
-      <!-- <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div> -->
+
     </div>
   </div>
 
@@ -99,8 +93,97 @@
         <!-- maicontent  -->
 
 
-    
+        <div class="case container">
+          <h1 class="casest container">Top-5 <span class="c">Cases</span></h1>
 
+        </div>
+
+        <div class="form">
+          <label for="chartType">Select Chart Type</label> 
+          <select  id="chartType" class="form-control">
+            <option value="bar" class="form-control">Bar</option>
+            <option value="line" class="form-control">Line</option>
+            <option value="pie" selected class="form-control">pie</option>
+            <option value="doughnut" class="form-control">Doughnut</option>
+            <option value="radar" class="form-control">Radar</option>
+            <option value="polarArea" class="form-control">Polar</option>
+            <option value="scatter" class="form-control">Scatter</option>
+            <!-- <option value="bubble" class="form-control">Bubble</option> -->
+          </select>
+         
+        </div>
+
+        <div class="loaderimg">
+          <!-- <img src="./../images/w" alt="" class="img-fluid"> -->
+        </div>
+
+        <div class="chartCase container">
+
+          <canvas id="myChart" width="350" height="400"></canvas>
+          <canvas id="myChart1" width="350" height="400"></canvas>
+
+        </div>
+
+
+        <!-- //for the table of data 
+         -->
+         <div class="makTable container">
+          <table class="table">
+            <thead class="thead-primary">
+              <tr>
+                <th scope="col">Country</th>
+                <th scope="col">Total Case</th>
+                <th scope="col">New Case</th>
+                <th scope="col">Total Recover</th>
+                <th scope="col">New Recover</th>
+                <th scope="col">Total Death</th>
+                
+                <th scope="col">New Death</th>
+                <th scope="col">Last Update</th>
+              </tr>
+            </thead>
+            <tbody class="Table1Body">
+              <!-- <tr>
+                <th scope="row">Mark</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr> -->
+              
+            </tbody>
+          </table>
+          
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Country</th>
+                <th scope="col">Total Case</th>
+                <th scope="col">New Case</th>
+                <th scope="col">Total Recover</th>
+                <th scope="col">New Recover</th>
+                <th scope="col">Total Death</th>
+                
+                <th scope="col">New Death</th>
+                <th scope="col">Last Update</th>
+              </tr>
+            </thead>
+            <tbody  class="Table2Body">
+              <!-- <tr>
+                <th scope="row">Mark</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr> -->
+              
+            </tbody>
+          </table>
+         </div>
     
            
   
@@ -133,6 +216,10 @@
         <img src="./.././images/design.svg" alt="" class="img-fluid" width="100px">
 </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./../js/top.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
 
 </html>
