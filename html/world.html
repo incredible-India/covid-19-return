@@ -19,7 +19,7 @@
     <div class="icon-bar">
         <a href="https://github.com/incredible-India/covid-19-return" class="facebook"><i class="fa fa-github"></i></a>
         <!-- <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> -->
-        <a href="#" class="google"><i class="fa fa-google"></i></a>
+        <a href="#" class="google"><i class="fa fa-arrow-circle-up"></i></a>
         <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
         <!-- <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> -->
       </div>
@@ -91,12 +91,130 @@
 
 
         <!-- maicontent  -->
-
-
+<!-- global data  -->
+        <div class="case container">
+            <h1 class="casest container">Global <span class="c">Data</span></h1>
+  
+          </div>
+  
+          <div class="form">
+            <label for="chartType">Select Chart Type</label> 
+            <select  id="chartType" class="form-control">
+              <option value="bar" class="form-control">Bar</option>
+              <option value="line" class="form-control">Line</option>
+              <option value="pie" selected class="form-control">pie</option>
+              <option value="doughnut" class="form-control">Doughnut</option>
+              <option value="radar" class="form-control">Radar</option>
+              <option value="polarArea" class="form-control">Polar</option>
+              <option value="scatter" class="form-control">Scatter</option>
+              <!-- <option value="bubble" class="form-control">Bubble</option> -->
+            </select>
+           
+          </div>
        
+          <div class="chartCase container" >
+            <div class="chartCasee"><canvas id="myChart" width="400" height="400"></canvas></div>
+            
+         
+  
+          
+          
+          <table class="table">
+            <thead class="thead-dark" style="background-color: orangered;">
+              <tr>
+                <th scope="col" colspan="2">World</th>
+             
+               
+              </tr>
+            </thead>
+            <tbody>
+          
+         
+            </tbody>
+          </table>
+
+        </div>
+
+
+<!-- ////////////////////////////// -->
+
+<!-- countries  -->
+
+<div class="case container">
+    <h1 class="casest container">All<span class="c"> countries</span></h1>
+
+  </div>
+
+<div class="charts">
+
+    <canvas id="myChart2" width="400" height="400"></canvas>
+    <canvas id="myChart3" width="400" height="400"></canvas>
+   
+
+</div>
+
+<div class="charts">
+    <canvas id="myChart4" width="400" height="400"></canvas>
+</div>
 
 
 
+<!-- fool maala -->
+<div class="fool">
+    <img src="./../images/fool.svg" alt="" class="img-fluid" width="200px" height="200px">
+</div>
+
+<!-- search form in the table  -->
+<div class="forms container">
+    <input type="text" class="form-control" placeholder="Search country" id="myInput" >
+</div>
+
+<div class="lapyp">
+    <table id="myTable" class="table container tabls" >
+        <thead class="thead-primary" style="background-color: orangered;">
+          <tr>
+            <th scope="col">Country</th>
+            <th scope="col">Total Cases</th>
+            <th scope="col">New Cases</th>
+            <th scope="col">Total Recoverd</th>
+            <th scope="col">New Recoverd</th>
+            <th scope="col">Total Death</th>
+            
+            <th scope="col">New Death</th>
+            <th scope="col">Last Update</th>
+          </tr>
+        </thead>
+        <tbody class="Table1Body">
+          <!-- <tr>
+            <th scope="row">Mark</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+          </tr> -->
+          
+        </tbody>
+
+    
+
+        
+      </table>
+
+
+
+
+        
+   
+        
+    </div>
+
+    <!-- fool maala -->
+<div class="fool">
+    <img src="./../images/fool.svg" alt="" class="img-fluid" width="200px" height="200px">
+</div>
+<!-- /////////////////////// -->
       <!-- footer  -->
 
 
@@ -127,7 +245,7 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<script src="./../js/world.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
 

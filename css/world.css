@@ -142,7 +142,8 @@
     margin: 10px 10px;
     font-size: 30px;
     cursor: pointer;
-    z-index: 9;
+    z-index: 9999;
+  
 }  
 
 .novel{
@@ -164,3 +165,105 @@
 }
 
 /* /////////////////////////////// */
+
+.casest{
+    text-align: center;
+    font-family: newf;
+  }
+
+  .form{
+    width: 200px;
+    display: block;
+    /* float: left; */
+    margin-left: auto;
+    margin-right: auto;
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10px; */
+    /* z-index: 5; */
+  }
+
+  .chartCase{
+
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  .table{
+    margin-left: 89px;
+    
+    margin-top: 61px;
+    /* margin: auto; */
+    width: 100%;
+  }
+
+  @media only screen and (max-width:1000px) {
+
+    .chartCase{
+        /* flex-direction: column; */
+       flex-direction: column;
+       overflow-x: auto;
+    
+    }
+    .table{
+        margin: auto;
+    
+      }
+
+}
+
+
+.charts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+@media only screen and (max-width:1000px) {
+
+    .charts{
+     
+        flex-direction: column;
+        overflow-x: auto;
+      
+    
+    }
+    }
+
+
+.forms{
+    margin-top: 6px;
+    margin-bottom: 15px;
+    position: sticky;
+    top: 10px;
+    z-index: 9;
+    
+}
+
+
+
+@media only screen and (max-width:750px) {
+
+    .lapyp{
+      
+        overflow-x: auto;
+    }
+  
+    }
+
+.motakr{
+    font-weight: 700;
+}
+
+.fool{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
