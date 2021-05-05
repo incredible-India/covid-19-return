@@ -6,6 +6,7 @@ if(navigator.onLine)
 
         for(i in dataF)
         {
+        
             for(j in dataF[i].districtData)
             {
                
@@ -13,10 +14,10 @@ if(navigator.onLine)
 
                 
                 document.getElementsByClassName('Table1Body')[0].innerHTML +=`
-            
-                <tr>
-               
+        
+                
                 <td scope="row" class="motakr">${dataF[i].districtData[j].district}</th>
+                <td>${dataF[i].state}</td>
                 <td>${dataF[i].districtData[j].active}</td>
                 <td>${dataF[i].districtData[j].confirmed}</td>
                 <td>${dataF[i].districtData[j].recovered}</td>

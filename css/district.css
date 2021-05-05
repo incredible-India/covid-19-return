@@ -189,3 +189,9 @@
 
 background-color: rgba(95,132,152,0.3);
 }
+
+.casest{
+    text-align: center;
+    font-family: newf;
+    mix-blend-mode: multiply;
+  }
