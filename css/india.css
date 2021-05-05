@@ -209,6 +209,7 @@
 .casest{
     text-align: center;
     font-family: newf;
+    mix-blend-mode: multiply;
   }
   .form{
     width: 200px;
@@ -238,4 +239,63 @@
     top: 10px;
     z-index: 9;
     
+}
+.charts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+@media only screen and (max-width:1000px) {
+
+    .charts{
+     
+        flex-direction: column;
+        overflow-x: auto;
+      
+    
+    }
+    }
+
+
+    @media only screen and (max-width:750px) {
+
+        .tabledata{
+          
+            overflow-x: auto;
+        }
+      
+        }
+
+
+
+        .tabledata tr:nth-child(even){
+
+    background-color: rgba(95,132,152,0.3);
+}
+
+.motakr{
+    font-weight: 500;
+}
+
+.disButton{
+    background-color: orangered;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disData{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.tableDatas{
+  overflow-x: auto;
+  margin-top: 15px;
 }

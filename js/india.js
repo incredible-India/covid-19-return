@@ -1,4 +1,8 @@
 let dataOfIndias = [];//overall data of india we will keep in it
+let totalC =[];
+let totalR = [];
+let totalD = [];
+let cname = [];
 if(navigator.onLine)
 {
 
@@ -81,12 +85,33 @@ fetch('https://api.rootnet.in/covid19-in/stats/latest')
 .then(datac => datac.json())
 .then(dataF => {
 
-    for(i in dataF.regional)
+    for(i in dataF.data.regional)
     {
-        console.log(dataF.regional[i].loc);
+       totalC[i] = dataF.data.regional[i].totalConfirmed;
+       totalR[i] = dataF.data.regional[i].discharged;
+       totalD[i] = dataF.data.regional[i].deaths;
+       cname[i] = dataF.data.regional[i].loc;
+
+
+       document.getElementsByClassName('Table1Body')[0].innerHTML +=`
+            
+       <tr>
+       <td scope="row" class="motakr">${dataF.data.regional[i].loc}</th>
+       <td>${dataF.data.regional[i].totalConfirmed}</td>
+       <td>${dataF.data.regional[i].discharged}</td>
+       <td>${dataF.data.regional[i].deaths}</td>
+       <td>${dataF.data.regional[i].confirmedCasesIndian}</td>
+       <td>${dataF.data.regional[i].confirmedCasesForeign}</td>
+       <td>${dataF.lastRefreshed}</td>
+    
+       
+     </tr> `
     }
 
 
+        showTotalGraph('myChart2','line',totalC,cname,"Total Cases");
+        showTotalGraph('myChart3','line',totalR,cname,"Total Recover");
+        showTotalGraph('myChart4','line',totalD,cname,"Total Death");
 })
 
 
@@ -145,4 +170,72 @@ function showTotalGraph (DomName,chartType,data,Country,title)
                 }
         }
     });
+}
+
+
+function SearchIt() {
+   
+    // Declare variables
+
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+  
+    filter = input.value.toUpperCase();
+  
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+  
+
+  document.getElementById('myInput').addEventListener("keyup", ()=>{
+    SearchIt()
+  });
+
+
+  //changing the graph type
+
+  let chartTypeCase = document.getElementsByTagName('select')[0];
+
+  chartTypeCase.onchange = function()
+{
+    let theTypeOfChartIs = chartTypeCase.value;
+    Array.from(document.getElementsByTagName('canvas')).forEach(ele =>{
+        ele.remove();
+    })
+    document.getElementsByClassName('myChart')[0].innerHTML =`
+    <canvas id="myChart" width="400" height="400"></canvas>
+ 
+    `
+    document.getElementsByClassName('charts')[0].innerHTML =`
+    <canvas id="myChart2" width="400" height="400"></canvas>
+    <canvas id="myChart3" width="400" height="400"></canvas>
+ 
+    `
+    document.getElementsByClassName('charts')[1].innerHTML =`
+    <canvas id="myChart4" width="400" height="400"></canvas>
+   
+ 
+    `
+ 
+    showTotalGraph('myChart',theTypeOfChartIs,dataOfIndias,['New Confirmed', 'Total Confirmed', 'New Deaths', 'Total Deaths', 'New Recovered','TotalRecovered'],"All Cases")
+
+    showTotalGraph("myChart2",theTypeOfChartIs,totalC,cname,"Total Cases");
+    showTotalGraph("myChart3",theTypeOfChartIs,totalR,cname,"Total Recovered");
+    showTotalGraph("myChart4",theTypeOfChartIs,totalD,cname,"Total Death");
+   
 }
