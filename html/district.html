@@ -11,7 +11,7 @@
     <!-- font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./../css/india.css">
+    <link rel="stylesheet" href="./../css/district.css">
 </head>
 <body>
     
@@ -26,18 +26,15 @@
       
 <!-- nav bar  -->
 
-<div class="novel">
-    <i class="fas fa-bars navs" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+<i class="fas fa-bars navs" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
    
-    </i>
+</i>
 
-    <h4 class="container stitle">Covid-19 Return</h4>
-</div>
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
       <div class="heads">
-        <img src="./.././images/world.svg" alt="" class="img-fluid" width="30px" height="30px" style="margin-right: 9px;">
+        <img src=".././images/world.svg" alt="" class="img-fluid" width="30px" height="30px" style="margin-right: 9px;">
         <h5 class="offcanvas-title c" id="offcanvasExampleLabel">Novel Coronavirus</h5>
       </div>
   
@@ -53,19 +50,17 @@
       </div>
 
       <div class="menyItem" >
-
-
         <h6 class="cases">Pages</h6>
         
         <h6><a href="./../index.html" class="ctr">Home</a></h6>
         <hr>
         <h6 class="cases">Covid Cases</h6>
 
-        <!-- <h6><a href="#" class="ctr">Top 5</a></h6>  -->
-
         <h6><a href="./top.html" class="ctr">Top 5</a></h6> 
 
         <h6><a href="./world.html" class="ctr">World</a></h6> 
+
+        <h6><a href="./india.html" class="ctr">India</a></h6> 
 
         <h6><a href="#" class="ctr">Detailed Analysis</a></h6> 
 <hr>
@@ -76,10 +71,10 @@
         <h6><a href="https://dashboard.cowin.gov.in/" class="ctr" target="_blank">Register for Vaccination</a></h6>
 
       <hr>
-    <h6 class="cases">Aurthor</h6>
+
+        <h6 class="cases">Aurthor</h6>
         
         <h6><a href="./auth.html" class="ctr">About</a></h6>
-   
 
  
         <img src="./../images/designMenu.svg" alt="" class="img-fluid avtaer">
@@ -89,97 +84,32 @@
     </div>
   </div>
 
-
 <!-- main content  -->
 
-  <div class="form">
-    <label for="chartType">Select Chart Type</label> 
-    <select  id="chartType" class="form-control">
-      <option value="bar" class="form-control">Bar</option>
-      <option value="line" class="form-control">Line</option>
-      <option value="pie" selected class="form-control">pie</option>
-      <option value="doughnut" class="form-control">Doughnut</option>
-      <option value="radar" class="form-control">Radar</option>
-      <option value="polarArea" class="form-control">Polar</option>
-      <option value="scatter" class="form-control">Scatter</option>
-      <!-- <option value="bubble" class="form-control">Bubble</option> -->
-    </select>
-   
-  </div>
-<div class="mainIndia container">
-
-
-    <div class="myChart container">
-        <canvas id="myChart" width="400" height="400"></canvas>
-    </div>
-    <div class="tablei">
-        <table class="table">
-            <thead class="thead-dark">
-              <tr>
-         
-                <th scope="col" colspan="2">INDIA</th>
-            
-                
-              </tr>
-            </thead>
-            <tbody>
-        
-           
-            </tbody>
-        
-          </table>
-    </div>
-
-
-  </div>
-
-  <div class="fool">
-    <img src="./../images/fool.svg" alt="" class="img-fluid" width="200px" height="200px">
-</div>
-
-  <!-- states of india  -->
-  <div class="case container"> 
-    <h1 class="casest container">States of<span class="c"> India</span></h1>
-
-  </div>
-
-
-  <div class="charts">
-
-    <canvas id="myChart2" width="400" height="400"></canvas>
-    <canvas id="myChart3" width="400" height="400"></canvas>
-   
-
-</div>
-
-<div class="charts">
-    <canvas id="myChart4" width="400" height="400"></canvas>
-</div>
-
-
-
 <div class="forms container">
-    <input type="text" class="form-control" placeholder="Search State" id="myInput" >
+    <input type="text" class="form-control" placeholder="Search District" id="myInput" >
 </div>
-
 <div class="tabledata">
     <table id="myTable" class="table container tabls" >
         <thead class="thead-primary" style="background-color: orangered;">
           <tr>
-            <th scope="col">State</th>
-            <th scope="col">Total Cases</th>
+            <th scope="col">District</th>
+
+            <th scope="col">Total Active</th>
+
+            <th scope="col">Total confirmed</th>
          
             <th scope="col">Total Recoverd</th>
           
             <th scope="col">Total Death</th>
             
-            <th scope="col">confirmed Cases Indian</th>
-            <th scope="col">confirmed Cases Foreign</th>
-            <th scope="col">Last Update</th>
+            <th scope="col">New confirmed</th>
+            <th scope="col">New Recoverd</th>
+            <th scope="col">New Death</th>
           </tr>
         </thead>
         <tbody class="Table1Body">
- 
+
           
         </tbody>
 
@@ -189,14 +119,6 @@
       </table>
 
 </div>
-<div class="fool">
-    <img src="./../images/fool.svg" alt="" class="img-fluid" width="200px" height="200px">
-</div>
-
-
-<!-- district data  -->
-<h6><a href="./district.html" class="ct mid" target="_blank">District Data</a></h6>
-
 <!-- ////////////////////////////// -->
 
       <!-- footer  -->
@@ -228,12 +150,9 @@
 </div>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="./../js/india.js"></script>
+
+<script src="./../js/district.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
 </html>

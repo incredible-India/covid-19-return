@@ -165,73 +165,6 @@
 }
 
 /* /////////////////////////////// */
-
-.mainIndia{
-    display: flex;
-    flex-direction: column;
-
-}
-
-.myChart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    overflow-x: auto;
-}
-
-@media only screen and (max-width:800px) {
-
-    .mainIndia{
-      
-        
-        overflow-x: auto;
-    }
-    .myChart{
-        overflow-x: auto;
-    }
-
-    .tablei{
-        overflow:auto ;
-
-    }
-
-    .charts{
-        overflow-x: auto;
-    }
-
-
- 
-  
-    }
-
-.casest{
-    text-align: center;
-    font-family: newf;
-    mix-blend-mode: multiply;
-  }
-  .form{
-    width: 200px;
-    display: block;
-    /* float: left; */
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    /* justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-left: 10px; */
-    /* z-index: 5; */
-  }
-
-  .fool{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 .forms{
     margin-top: 6px;
     margin-bottom: 15px;
@@ -240,70 +173,19 @@
     z-index: 9;
     
 }
-.charts{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
 
-}
+@media only screen and (max-width:750px) {
 
-@media only screen and (max-width:1000px) {
-
-    .charts{
-     
-        flex-direction: column;
+    .tabledata{
+      
         overflow-x: auto;
-      
-    
     }
+  
     }
 
 
-    @media only screen and (max-width:750px) {
 
-        .tabledata{
-          
-            overflow-x: auto;
-        }
-      
-        }
+    .tabledata tr:nth-child(even){
 
-
-
-        .tabledata tr:nth-child(even){
-
-    background-color: rgba(95,132,152,0.3);
-}
-
-.motakr{
-    font-weight: 500;
-}
-
-.disButton{
-    background-color: orangered;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.disData{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.tableDatas{
-  overflow-x: auto;
-  margin-top: 15px;
-}
-
-.mid{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 25px;
-  margin-bottom: 10px;
+background-color: rgba(95,132,152,0.3);
 }
