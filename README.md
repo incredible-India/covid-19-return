@@ -6,6 +6,6 @@ css
 bootstrap
 chart.js
 javascript
-Api of covid (taken from WHO)
+Api of covid (taken from Covid19org)
 
 
